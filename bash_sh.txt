@@ -1,0 +1,12 @@
+echo "
+asfsd" > README2.md
+
+.gitignore
+.dockerignore
+.gitattributes
+/assets
+/src
+/public
+/public
+    
+LISENSE
