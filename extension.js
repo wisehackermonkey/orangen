@@ -28,8 +28,10 @@ function activate(context) {
 		
 		// [node.js - Vscode API: read clipboard text content - Stack Overflow](https://stackoverflow.com/questions/54632431/vscode-api-read-clipboard-text-content)
 		let result = await fs.readFile(vscode.workspace.rootPath +"/template/README.md",(text)=>{
-			
-			vscode.env.clipboard.writeText("works").then((result)=>{
+			let readme_raw = fs.readFileSync("template/README.md", 'utf-8');
+			let readme = readme_raw.join("");
+			console.log(readme)
+			vscode.env.clipboard.writeText(readme).then((result)=>{
 				console.log(result)
 				console.log(text)
 			})
